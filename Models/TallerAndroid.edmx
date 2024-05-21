@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TallerAndroid.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TallerAndroidStoreContainer">
+    <EntitySet Name="MallCustomers" EntityType="TallerAndroid.Store.MallCustomers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Denuncias" EntityType="TallerAndroid.Store.Denuncias" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="MallCustomers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="smallint" Nullable="false" />
+    <Property Name="AnnualIncome" Type="smallint" Nullable="false" />
+    <Property Name="SpendingScore" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Denuncias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodCategoria" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipologia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Departamento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cantidad" Type="smallint" Nullable="false" />
+    <Property Name="CasosResuelto" Type="smallint" Nullable="false" />
+    <Property Name="Annio" Type="smallint" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TallerAndroid" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="TallerAndroidContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MallCustomers" EntityType="TallerAndroid.MallCustomer" />
+          <EntitySet Name="Denuncias" EntityType="TallerAndroid.Denuncia" />
+        </EntityContainer>
+        <EntityType Name="MallCustomer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <Property Name="Age" Type="Int16" Nullable="false" />
+          <Property Name="AnnualIncome" Type="Int16" Nullable="false" />
+          <Property Name="SpendingScore" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Denuncia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodCategoria" Type="String" Nullable="false" />
+          <Property Name="Tipologia" Type="String" Nullable="false" />
+          <Property Name="Departamento" Type="String" Nullable="false" />
+          <Property Name="Cantidad" Type="Int16" Nullable="false" />
+          <Property Name="CasosResuelto" Type="Int16" Nullable="false" />
+          <Property Name="Annio" Type="Int16" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TallerAndroidStoreContainer" CdmEntityContainer="TallerAndroidContainer">
+    <EntitySetMapping Name="MallCustomers">
+      <EntityTypeMapping TypeName="IsTypeOf(TallerAndroid.MallCustomer)">
+        <MappingFragment StoreEntitySet="MallCustomers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="AnnualIncome" ColumnName="AnnualIncome" />
+          <ScalarProperty Name="SpendingScore" ColumnName="SpendingScore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Denuncias">
+      <EntityTypeMapping TypeName="IsTypeOf(TallerAndroid.Denuncia)">
+        <MappingFragment StoreEntitySet="Denuncias">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodCategoria" ColumnName="CodCategoria" />
+          <ScalarProperty Name="Tipologia" ColumnName="Tipologia" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="CasosResuelto" ColumnName="CasosResuelto" />
+          <ScalarProperty Name="Annio" ColumnName="Annio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
